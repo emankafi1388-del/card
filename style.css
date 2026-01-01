@@ -20,7 +20,7 @@ body {
     overflow-y: auto;
 }
 
-/* ================= ANIMATED BACKGROUND ================= */
+/* ================= BACKGROUND ================= */
 .background {
     position: fixed;
     inset: 0;
@@ -158,7 +158,7 @@ body {
     100% { opacity: 0; transform: translateY(-10px); }
 }
 
-/* ================= PAYMENT LINKS ================= */
+/* ================= PAYMENT ================= */
 .payment-container {
     display: flex;
     justify-content: center;
@@ -194,7 +194,7 @@ body {
     top: 20px;
     right: 20px;
     display: flex;
-    gap: 20px;
+    gap: 16px;
     z-index: 10;
 }
 
@@ -211,11 +211,11 @@ body {
 
 .icon-link:hover {
     color: #42a5f5;
-    transform: scale(1.25) rotate(5deg);
+    transform: scale(1.2);
     box-shadow: 0 0 20px rgba(66,165,245,0.8);
 }
 
-/* ================= LEFT LINKS ================= */
+/* ================= SITE LINKS ================= */
 .left-links {
     display: flex;
     flex-direction: column;
@@ -241,35 +241,64 @@ body {
     box-shadow: 0 0 15px rgba(66,165,245,0.6);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
 
     body {
         padding: 20px 0;
     }
 
+    /* CARD MOBILE */
     .card {
-        width: 92%;
+        width: 94%;
+        max-width: 360px;
         height: auto;
+        aspect-ratio: 16 / 10;
     }
 
+    .card-front {
+        padding: 22px;
+    }
+
+    .card-number h3 {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .card-holder {
+        font-size: 15px;
+    }
+
+    .iban, .shaba {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .chip {
+        width: 48px;
+        height: 36px;
+    }
+
+    /* PAYMENT */
     .payment-container {
         flex-direction: column;
         gap: 16px;
     }
 
+    /* ICONS → گوشه راست بالا */
     .right-icons {
         top: env(safe-area-inset-top, 12px);
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        gap: 14px;
-        max-width: 90vw;
-        overflow: hidden;
+        right: 12px;
+        left: auto;
+        transform: none;
+        gap: 12px;
     }
 
     .icon-link {
-        font-size: 26px;
+        font-size: 24px;
         padding: 8px;
     }
 
@@ -277,6 +306,7 @@ body {
         transform: scale(1.1);
     }
 
+    /* SITE LINKS */
     .left-links {
         align-items: center;
         margin-top: 20px;
@@ -290,9 +320,10 @@ body {
     }
 }
 
-/* ================= EXTRA SAFE SMALL DEVICES ================= */
+/* ================= VERY SMALL DEVICES ================= */
 @media (max-width: 480px) {
-    .right-icons {
-        transform: translateX(-50%) scale(0.95);
+    .card {
+        max-width: 320px;
+        aspect-ratio: 17 / 11;
     }
 }
